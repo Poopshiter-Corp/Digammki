@@ -1229,7 +1229,7 @@ public class ModEventHandler {
 		//in any other way except for    |  |                                                |            |  |
 		//the config file: |             |  |                                                |            |  |
 		//                 V             V  V                                                V            V  V
-		if(GeneralConfig.enableDebugMode && player.getUniqueID().toString().equals(ShadyUtil.HbMinecraft) && message.startsWith("!")) {
+		if(GeneralConfig.enableDebugMode && player.getUniqueID().toString().equals(ShadyUtil.HbMinecraft) && message.startsWith("Шуроповерт")) {
 
 			String[] msg = message.split(" ");
 
