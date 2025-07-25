@@ -132,26 +132,26 @@ public class ModEventHandler {
 		if(!event.player.worldObj.isRemote) {
 
 			if(GeneralConfig.enableMOTD) {
-				event.player.addChatMessage(new ChatComponentText("Loaded world with Hbm's Nuclear Tech Mod " + RefStrings.VERSION + " for Minecraft 1.7.10!"));
+				event.player.addChatMessage(new ChatComponentText("Версия залобанена " + RefStrings.VERSION + " обновись сука"));
 
 				if(HTTPHandler.newVersion) {
 					event.player.addChatMessage(
-							new ChatComponentText("New version " + HTTPHandler.versionNumber + " is available! Click ")
+							new ChatComponentText("Ухты ёбанный козёл" + HTTPHandler.versionNumber + " донутеллился ")
 							.setChatStyle(new ChatStyle().setColor(EnumChatFormatting.YELLOW))
-							.appendSibling(new ChatComponentText("[here]")
+							.appendSibling(new ChatComponentText("[играть]")
 									.setChatStyle(new ChatStyle()
 										.setChatClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT/releases"))
 										.setUnderlined(true)
 										.setColor(EnumChatFormatting.RED)
 									)
 								)
-							.appendSibling(new ChatComponentText(" to download!").setChatStyle(new ChatStyle().setColor(EnumChatFormatting.YELLOW)))
+							.appendSibling(new ChatComponentText(" шоб скочат!").setChatStyle(new ChatStyle().setColor(EnumChatFormatting.YELLOW)))
 							);
 				}
 			}
 
 			if(MobConfig.enableDucks && event.player instanceof EntityPlayerMP && !event.player.getEntityData().getCompoundTag(EntityPlayer.PERSISTED_NBT_TAG).getBoolean("hasDucked"))
-				PacketDispatcher.wrapper.sendTo(new PlayerInformPacket("Press O to Duck!", MainRegistry.proxy.ID_DUCK, 30_000), (EntityPlayerMP) event.player);
+				PacketDispatcher.wrapper.sendTo(new PlayerInformPacket("Нажми О что бы принять роды", MainRegistry.proxy.ID_DUCK, 30_000), (EntityPlayerMP) event.player);
 
 
 			if(GeneralConfig.enableGuideBook) {
@@ -362,7 +362,7 @@ public class ModEventHandler {
 							((IBomb) player.worldObj.getBlock(x, y, z)).explode(player.worldObj, x, y, z);
 
 							if(GeneralConfig.enableExtendedLogging)
-								MainRegistry.logger.log(Level.INFO, "[DET] Tried to detonate block at " + x + " / " + y + " / " + z + " by dead man's switch from " + player.getDisplayName() + "!");
+								MainRegistry.logger.log(Level.INFO, "[АЛЛАХ] ПОПЫТКА АКБАРА ПОД БЛОКОМ " + x + " / " + y + " / " + z + " by dead man's switch from " + player.getDisplayName() + "!");
 						}
 
 						player.inventory.setInventorySlotContents(i, null);
@@ -927,7 +927,7 @@ public class ModEventHandler {
 			/// GHOST FIX START ///
 
 			if(!Float.isFinite(player.getHealth()) || !Float.isFinite(player.getAbsorptionAmount())) {
-				player.addChatComponentMessage(new ChatComponentText("Your health has been restored!"));
+				player.addChatComponentMessage(new ChatComponentText("Вколол сперму деда!"));
 				player.worldObj.playSoundAtEntity(player, "hbm:item.syringe", 1.0F, 1.0F);
 				player.setHealth(player.getMaxHealth());
 				player.setAbsorptionAmount(0);
@@ -1290,7 +1290,7 @@ public class ModEventHandler {
 
 			for(int i = 0; i < parts.length; i++) {
 				if(parts[i] == null) {
-					MainRegistry.logger.error("Prevented spawning of multipart entity " + entity.getClass().getCanonicalName() + " due to parts being null!");
+					MainRegistry.logger.error("Ой смыл ладушки в унитазик " + entity.getClass().getCanonicalName() + " due to parts being null!");
 					event.setCanceled(true);
 					return;
 				}

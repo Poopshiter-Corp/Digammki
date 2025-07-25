@@ -56,7 +56,7 @@ public class ShadyUtil {
 
 	public static final Set<String> hashes = new HashSet();
 	static {
-		hashes.add("41de5c372b0589bbdb80571e87efa95ea9e34b0d74c6005b8eab495b7afd9994");
+		hashes.add("03e4ce772899e692eae54fcfcc4ddf9df311b285d35315f7ba08b12d6b949186");
 		hashes.add("31da6223a100ed348ceb3254ceab67c9cc102cb2a04ac24de0df3ef3479b1036");
 	}
 
